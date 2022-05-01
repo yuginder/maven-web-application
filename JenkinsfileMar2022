@@ -36,7 +36,7 @@ stage('CheckouCode'){
 stage('Build'){
     sh "${mavenHome}/bin/mvn clean package"
 }
-stage('ExecuteSonarQubeReport'){
+/*stage('ExecuteSonarQubeReport'){
     sh "${mavenHome}/bin/mvn sonar:sonar"
 }
 stage('UploadArtifactsintoNexus'){
@@ -46,7 +46,7 @@ stage('DeployApplicationtoTomcatServer'){
     sshagent(['03a36731-6770-4c29-bfaf-c690f058b5ad']) {
     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.111.55.56:/opt/apache-tomcat-9.0.62/webapps"
 }
-}
+}*/
 }
 catch{e){
 currentBuild.result = 'FAILED' 
