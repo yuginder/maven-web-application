@@ -48,7 +48,7 @@ stage('DeployApplicationtoTomcatServer'){
 }
 }*/
 }
-catch{e){
+catch(e){
 currentBuild.result = 'FAILED' 
 }
 finally{
