@@ -29,7 +29,7 @@ node {
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
     def mavenHome = tool name: 'maven3.8.4'
 try{
-sendSlackNotification('STARTED')
+sendSlackNotifications('STARTED')
 stage('CheckouCode'){
     git branch: 'development', credentialsId: '01fcd316-ce32-4c00-bc92-759c054d58f5', url: 'https://github.com/yuginder/maven-web-application.git'
 }
